@@ -124,7 +124,7 @@ contract DSCEngineTest is Test {
     }
 
     modifier depositedCollateralAndMintedDsc() {
-        vm.startPrank(user);
+        vm.startPrank(USER);
         ERC20Mock(weth).approve(address(dsce), amountCollateral);
         dsce.depositCollateralAndMintDsc(weth, amountCollateral, amountToMint);
         vm.stopPrank();
@@ -132,7 +132,7 @@ contract DSCEngineTest is Test {
     }
 
     function testCanMintWithDepositedCollateral() public depositedCollateralAndMintedDsc {
-        uint256 userBalance = dsc.balanceOf(user);
+        uint256 userBalance = dsc.balanceOf(USER);
         assertEq(userBalance, amountToMint);
     }
 
