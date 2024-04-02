@@ -77,3 +77,9 @@ $ cast --help
 # Install 
 - forge install openzeppelin-contracts/openzeppelin --no-commit
 - forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
+
+
+1. What are our invariants/properties?
+    1. Understand the invariants
+    2. Write a fuzz test for invariant (fuzz test - test that checks if invariants are in fact cannot be modified)
+
