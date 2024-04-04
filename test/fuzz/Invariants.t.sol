@@ -50,7 +50,13 @@ contract InvariantsTest is StdInvariant, Test {
         console.log(wethValue);
         console.log(wbtcValue);
         console.log(totalSupply);
+        console.log(handler.timeMintIsCalled());
 
         assert(wethValue + wbtcValue >= totalSupply);
+    }
+
+    function invariant_gettersShouldNotRevert() public view{
+        dsce.getLiquidationBonus();
+        dsce.getPrecision();
     }
 }
